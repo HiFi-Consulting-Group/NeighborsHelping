@@ -1,0 +1,9 @@
+<template>
+    <div if:true={dataLoaded}>
+        <div class="slds-text-heading_medium slds-text-align_center">{formTree.title}</div>
+        <template for:each={formTree.fields} for:item="field">
+            <c-form-field-editor key={field.recordId} field={field} instance-id={instanceId}></c-form-field-editor>
+        </template>
+    </div>
+    
+</template>

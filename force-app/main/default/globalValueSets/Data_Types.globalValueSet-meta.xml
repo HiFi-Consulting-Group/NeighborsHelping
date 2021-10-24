@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Boolean</fullName>
+        <default>false</default>
+        <label>Boolean</label>
+    </customValue>
+    <customValue>
+        <fullName>Currency</fullName>
+        <default>false</default>
+        <label>Currency</label>
+    </customValue>
+    <customValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Number</fullName>
+        <default>false</default>
+        <label>Number</label>
+    </customValue>
+    <customValue>
+        <fullName>Radio</fullName>
+        <default>false</default>
+        <label>Radio</label>
+    </customValue>
+    <customValue>
+        <fullName>Text</fullName>
+        <default>false</default>
+        <label>Text</label>
+    </customValue>
+    <customValue>
+        <fullName>Text Area</fullName>
+        <default>false</default>
+        <label>Text Area</label>
+    </customValue>
+    <description>Standard data types available on forms</description>
+    <masterLabel>Data Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
