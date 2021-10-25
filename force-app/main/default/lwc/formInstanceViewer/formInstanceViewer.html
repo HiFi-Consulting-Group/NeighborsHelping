@@ -1,3 +1,9 @@
 <template>
-    
+    <div data-id="enclosingDiv" class="slds-grid slds-grid_align-center">
+        <lightning-card class="slds-col slds-size_9-of-12">
+            <div class="slds-var-p-horizontal_medium">
+                <c-form-instance is-editable={isEditable} instance-id={recordId} ></c-form-instance>
+            </div>
+        </lightning-card>
+    </div>
 </template>

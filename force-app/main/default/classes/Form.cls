@@ -9,6 +9,7 @@ public inherited sharing class Form {
     public String status;
     public String title;
     public String type;
+    public Boolean viewerIsStaff; //If the running user is staff, they have access to additional fields
     public List < Form_Field > fields;
     
     public class Form_Field {
@@ -31,10 +32,20 @@ public inherited sharing class Form {
     }
 
     public Form () {
+        setViewerType();
     }
 
     public Form (ID formInstanceId) {
+        setViewerType();
         loadFromId(formInstanceId);
+    }
+
+    private void setViewerType() {
+        if (UserInfo.getUserType()=='Standard') {
+            this.viewerIsStaff = true;
+        } else {
+            this.viewerIsStaff = false;
+        }
     }
 
     // public static List < Form > getFormList (List < ID > idList) {
