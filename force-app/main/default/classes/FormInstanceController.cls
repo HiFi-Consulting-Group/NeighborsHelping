@@ -73,4 +73,32 @@ public with sharing class FormInstanceController {
         }
     }
 
+    @AuraEnabled
+    public static string getFormInstanceStatus(String instanceId){
+
+        try {
+            Form frm = HubControllerWithoutSharing.getFormInstanceInfo(instanceId);  
+            return frm.status;
+        } catch (Exception e) {
+            throw new NHN_Exception('FormInstanceController.updateNumber', 'Could not get status, please refresh and try again.', e);
+        }
+    }
+
+    @AuraEnabled
+    public static void staffDecisionMade(String instanceId, String decision){
+
+        try {
+            Form frm = new Form(instanceId); 
+            if (decision=='Approved') {
+                frm.approve();
+            }  else if (decision=='Declined') {
+                frm.decline();
+            } else {
+                throw new NHN_Exception('FormInstanceController.updateNumber', 'Unknown status entered.');
+            }
+        } catch (Exception e) {
+            throw new NHN_Exception('FormInstanceController.updateNumber', 'Could not get status, please refresh and try again.', e);
+        }
+    }
+
 }

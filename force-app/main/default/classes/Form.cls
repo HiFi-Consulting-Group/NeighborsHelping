@@ -106,5 +106,16 @@ public inherited sharing class Form {
 
     }
 
+    public void approve() {
+        this.status = 'Approved';
+        Form_Instance__c frmInst = new Form_Instance__c(ID=this.formInstanceId, Status__c=this.status);
+        update frmInst;
+    }
+
+    public void decline() {
+        this.status = 'Declined';
+        Form_Instance__c frmInst = new Form_Instance__c(ID=this.formInstanceId, Status__c=this.status);
+        update frmInst;
+    }
 
 }

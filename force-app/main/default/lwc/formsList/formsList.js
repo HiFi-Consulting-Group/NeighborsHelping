@@ -19,45 +19,42 @@ const columns = [
 
 export default class FormsList extends NavigationMixin ( LightningElement ) {
 
-    // forms;
-    // columns = columns;
+    forms;
+    columns = columns;
 
-    // async connectedCallback() {
-    //     let records = await getEndorsements();
-    //     let endorsements = JSON.parse(records);
+    async connectedCallback() {
+        let records = await getEndorsements();
+        let endorsements = JSON.parse(records);
 
-    //     console.log('endorsements');
-    //     console.log(endorsements);
-        
-    //     if (endorsements) {
-    //         for (let end of endorsements) {
-    //             end.iconName = 'action:edit'
-    //             end.iconHelp = 'Edit';
-    //             end.advisor = end.Advisor__r.Name;
-    //         }
+        // if (endorsements) {
+        //     for (let end of endorsements) {
+        //         end.iconName = 'action:edit'
+        //         end.iconHelp = 'Edit';
+        //         end.advisor = end.Advisor__r.Name;
+        //     }
 
-    //     }
+        // }
 
-    //     this.endorsements = endorsements;
+        // this.endorsements = endorsements;
 
-    // }
+    }
 
-    // handleRowAction(event) {
-    //     const row = event.detail.row;
-    //     console.log('row.Id');
-    //     console.log(row.Id);
+    handleRowAction(event) {
+        // const row = event.detail.row;
+        // console.log('row.Id');
+        // console.log(row.Id);
 
-    //     this[NavigationMixin.Navigate]({
-    //         type: 'standard__recordPage',
-    //         attributes: {
-    //             recordId: 'a2W5d00000DPmXQEA1',  //hardcoded for now
-    //             objectApiName: 'Form_Instance__c',
-    //             actionName: 'view'
-    //         }
-    //     });
+        // this[NavigationMixin.Navigate]({
+        //     type: 'standard__recordPage',
+        //     attributes: {
+        //         recordId: 'a2W5d00000DPmXQEA1',  //hardcoded for now
+        //         objectApiName: 'Form_Instance__c',
+        //         actionName: 'view'
+        //     }
+        // });
     
 
-    // }
+    }
 
 
 }

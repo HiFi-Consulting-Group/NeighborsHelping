@@ -1,11 +1,17 @@
 <template>
     <div class="slds-grid slds-gutters">
         <div class="slds-col slds-size_1-of-2">
-            <c-form-instance-editor record-id={recordId} is-staff-view="true"></c-form-instance-editor>
-            <div class="slds-align_absolute-center">
-                <lightning-button variant="success" label="Approve Project" title="Successful action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
-                <lightning-button variant="destructive" label="Deny Project" title="Destructive action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <div if:true={showControls}>
+                <c-form-instance-editor record-id={recordId} is-staff-view="true"></c-form-instance-editor>
+                <div class="slds-align_absolute-center">
+                    <lightning-button name="Approved" variant="success" label="Approve Project" title="Successful action" onclick={handleDecision} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button name="Declined" variant="destructive" label="Deny Project" title="Destructive action" onclick={handleDecision} class="slds-m-left_x-small"></lightning-button>
+                </div>
             </div>
+            <div if:false={showControls}>
+                <c-form-instance-viewer record-id={recordId} is-staff-view="true"></c-form-instance-viewer>
+            </div>
+            
         </div>
         <div class="slds-col slds-size_1-of-2">
             <c-form-instance-viewer record-id={recordId}></c-form-instance-viewer>
