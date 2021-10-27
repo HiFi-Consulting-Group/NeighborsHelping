@@ -7,14 +7,6 @@ public with sharing class FormInstanceController {
         return JSON.serialize(frm);
     }
 
-    // @AuraEnabled
-    // public static string loadFormList(String formInstanceId){
-    //     //stubbed id list
-    //     List < ID > idList = new List < ID >{'a0z5f000000QmPpAAK'};
-    //     List < Form > formList = Form.getFormList(idList);
-    //     return JSON.serialize(formList);
-    // }
-
     @AuraEnabled
     public static String createProjectRequest(){
         ID runningUserContactId = getCommUserContactId();
@@ -68,6 +60,16 @@ public with sharing class FormInstanceController {
             return HubControllerWithoutSharing.updateNumber(instanceId, fieldId, dataId, value);  
         } catch (Exception e) {
             throw new NHN_Exception('FormInstanceController.updateNumber', 'Could not update field value, please refresh and try again.', e);
+        }
+    }
+
+    @AuraEnabled
+    public static void memberFormSubmitted(String instanceId){
+
+        try {
+            HubControllerWithoutSharing.memberFormSubmitted(instanceId);  
+        } catch (Exception e) {
+            throw new NHN_Exception('FormInstanceController.updateNumber', 'Could not submit form, please refresh and try again.', e);
         }
     }
 

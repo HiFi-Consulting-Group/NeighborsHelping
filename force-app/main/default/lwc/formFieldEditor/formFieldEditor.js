@@ -31,6 +31,7 @@ export default class FormFieldEditor extends LightningElement {
         if (this.localField.data) {
             this.dataId = this.localField.data.dataId;
         }
+
         console.log('this.dataId');
         console.log(this.dataId);
     }

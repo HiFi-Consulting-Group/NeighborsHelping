@@ -2,24 +2,34 @@
     <div if:true={dataLoaded}>
         <div class="slds-text-heading_medium slds-text-align_center">{formTree.title}</div>
         <template for:each={formTree.fields} for:item="field">
-            <div if:false={field.staffOnly} key={field.recordId}>
-                <div if:true={isEditable}>
-                    <c-form-field-editor key={field.recordId} field={field} instance-id={instanceId}></c-form-field-editor>
+            <div key={field.recordId}>
+                <!-- User View -->
+                <div if:false={isStaffView}>
+                    <div if:false={field.staffOnly}>
+                        <div if:true={field.userVisible} key={field.recordId}>
+                            <div if:true={isEditable}>
+                                <c-form-field-editor key={field.recordId} field={field} instance-id={instanceId}></c-form-field-editor>
+                            </div>
+                            <div if:false={isEditable}>
+                                <c-form-field-viewer key={field.recordId} field={field} instance-id={instanceId}></c-form-field-viewer>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div if:false={isEditable}>
-                    <c-form-field-viewer key={field.recordId} field={field} instance-id={instanceId}></c-form-field-viewer>
+
+                <!-- Staff view -->
+                <div if:true={isStaffView}>
+                    <div if:true={field.staffOnly} key={field.recordId}>
+                        <div if:true={isEditable}>
+                            <c-form-field-editor key={field.recordId} field={field} instance-id={instanceId}></c-form-field-editor>
+                        </div>
+                        <div if:false={isEditable}>
+                            <c-form-field-viewer key={field.recordId} field={field} instance-id={instanceId}></c-form-field-viewer>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
+            
         </template>
-        <!-- Employee section -->
-        <div if:true={isEmployeeView}>
-            <template for:each={formTree.fields} for:item="field">
-                <div if:true={field.staffOnly} key={field.recordId}>
-                    <c-form-field-editor key={field.recordId} field={field} instance-id={instanceId}></c-form-field-editor>
-                </div>
-            </template>
-        </div>
     </div>
-    
 </template>

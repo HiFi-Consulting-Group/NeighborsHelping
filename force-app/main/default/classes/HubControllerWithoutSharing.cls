@@ -38,4 +38,9 @@ public without sharing class HubControllerWithoutSharing {
         return data.ID; 
     }
 
+    public static void memberFormSubmitted(String instanceId) {
+        Form frm = new Form(instanceId);
+        frm.submit();
+    }
+
 }

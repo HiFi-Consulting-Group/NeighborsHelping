@@ -6,7 +6,7 @@ import { handleError } from 'c/lwcUtilities';
 export default class FormInstance extends LightningElement {
     @api instanceId;
     @api isEditable;
-    isEmployeeView;
+    @api isStaffView = false;
     dataLoaded = false;
     formTree;
 
@@ -21,9 +21,11 @@ export default class FormInstance extends LightningElement {
     }
 
     async loadData() {
+        console.log('isStaffView');
+        console.log(this.isStaffView);
         try {
             this.formTree = JSON.parse(await getFormInstanceInfo({formInstanceId:this.instanceId}));
-            // this.isEmployeeView = this.formTree.viewerIsStaff;
+            console.log('this.formTree-------------');
             console.log(this.formTree);
             this.dataLoaded = true;
         } catch (error) {
