@@ -1,18 +1,12 @@
-# Salesforce DX Project: Next Steps
+# About this Repo
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+NHN is a sample app demonstrating patterns for building robust LWC applications in Salesforce.   The central use-case is a set of reusable context-aware LWCs to enable form submission and viewing for bothe Experience Site users and internal staff.  These LWCs consume the relvant data via Apex encapsulation classes which manage business logic, data access and structure.
 
-## How Do You Plan to Deploy Your Changes?
+## Safe Harbor
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Originally created for a Tahoe Dreamin' Demo, this sample application is a work in progress and should not be considered production-ready code.  Check back for future enhancements and refinements as this sample app grows.
 
-## Configure Your Salesforce DX Project
+## Resources
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Link to Taho Dreamin' Deck: https://drive.google.com/drive/folders/1i9K1FFrcZGH2loUQu0juTEgcc2ah3zbM?usp=sharing 
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
