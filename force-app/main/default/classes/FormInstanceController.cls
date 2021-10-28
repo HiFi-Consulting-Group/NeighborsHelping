@@ -2,23 +2,33 @@ public with sharing class FormInstanceController {
     
     @AuraEnabled
     public static string getFormInstanceInfo(String formInstanceId){
-        Form frm = HubControllerWithoutSharing.getFormInstanceInfo(formInstanceId);
-        System.debug('frm: '+frm);
-        return JSON.serialize(frm);
+        try {
+            Form frm = HubControllerWithoutSharing.getFormInstanceInfo(formInstanceId);
+            return JSON.serialize(frm);
+        } catch (Exception e) {
+            throw new NHN_Exception('FormInstanceController.getFormInstanceInfo', 'Could not update field value, please refresh and try again.', e);
+        }
     }
 
     @AuraEnabled
     public static String createProjectRequest(){
-        ID runningUserContactId = getCommUserContactId();
-        Form frm = HubControllerWithoutSharing.createProjectRequest(runningUserContactId);
-        System.debug('frm: '+frm);
-        return JSON.serialize(frm);
+        try {
+            ID runningUserContactId = getCommUserContactId();
+            Form frm = HubControllerWithoutSharing.createProjectRequest(runningUserContactId);
+            return JSON.serialize(frm);
+        } catch (Exception e) {
+            throw new NHN_Exception('FormInstanceController.createProjectRequest', 'Could not create a new project request.  Try again.', e);
+        }
     }
 
     public static ID getCommUserContactId() {
-        ID userId = UserInfo.getUserId();
-        User u = [SELECT Id, ContactId FROM User WHERE Id=:userId];
-        return u.ContactId;
+        try {
+            ID userId = UserInfo.getUserId();
+            User u = [SELECT Id, ContactId FROM User WHERE Id=:userId];
+            return u.ContactId;
+        } catch (Exception e) {
+            throw new NHN_Exception('FormInstanceController.getCommUserContactId', 'Error loading running user, please refresh and try again.', e);
+        }
     }
 
     @AuraEnabled

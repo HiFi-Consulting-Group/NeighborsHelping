@@ -15,9 +15,12 @@ export default class FormFieldViewer extends LightningElement {
     handleData() {
         //deep clone field so that we can update internals on the fly
         this.localField = JSON.parse(JSON.stringify(this.field));
+        
+        // If deep clone isn't needed, you can use object.assign:
+        // Object.assign(this.localField , this.field);
+
+        // Call to shared utility function to fill in data types for markup logic
         this.localField = updateFieldInternals(this.localField, this.instanceId);
-        console.log('this.localField');
-        console.log(this.localField);
 
     }
 

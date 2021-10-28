@@ -4,17 +4,11 @@ import { NavigationMixin } from 'lightning/navigation';
 
 import memberFormSubmitted from '@salesforce/apex/FormInstanceController.memberFormSubmitted';
 
-
-
 export default class FormInstanceEditor extends NavigationMixin ( LightningElement ) {
     @api recordId;
     @api isStaffView = false;
     isEditable = true;
     submitDisabled = false;
-
-    connectedCallback() {
-        console.log(this.isStaffView);
-    }
 
     async handleSubmit() {
         //Update status on the Form Instance and return user to home

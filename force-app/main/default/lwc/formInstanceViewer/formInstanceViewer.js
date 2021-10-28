@@ -5,9 +5,4 @@ export default class FormInstanceViewer extends LightningElement {
     @api isStaffView = false;
     isEditable = false;
 
-    connectedCallback() {
-        console.log('recordId');
-        console.log(this.recordId);
-    }
-
 }

@@ -5,12 +5,15 @@ import createProjectRequest from '@salesforce/apex/FormInstanceController.create
 export default class FormsList extends NavigationMixin ( LightningElement )  {
 
     async handleProjRequest() {
+        console.log('handleProjRequest');
+        let frmInstance = JSON.parse(await createProjectRequest());
+
         this[NavigationMixin.Navigate]({
             type: 'comm__namedPage',
             attributes: {
                 name: 'formEditor__c'
             },
-            state: {recordId : 'a115f000000FnB8AAK'},
+            state: {recordId : frmInstance.formInstanceId},
         });
     }
-}
+} 
