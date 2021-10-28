@@ -1,0 +1,15 @@
+<template>
+    <div data-id="enclosingDiv" class="slds-grid slds-grid_align-center">
+        <lightning-card class="slds-col slds-size_9-of-12">
+            <div class="slds-var-p-horizontal_medium">
+                <c-form-instance is-editable={isEditable} instance-id={recordId} is-staff-view={isStaffView}></c-form-instance>
+                <!-- Only show submit buton when not in staff view -->
+                <div if:false={isStaffView}>
+                    <div class="slds-card__footer slds-align_absolute-center" slot="footer">
+                        <lightning-button variant="brand" label="Submit" title="Submit" onclick={handleSubmit} disabled={submitDisabled}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

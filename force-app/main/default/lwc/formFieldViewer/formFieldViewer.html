@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-form-element slds-form-element_readonly">
+        <label class="nhn-label" data-id="label" for={localField.Id}>
+            {localField.name}
+        </label>
+        <div if:true={localField.isText} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-text 
+                value={localField.data.text}>
+            </lightning-formatted-text>
+        </div>
+        <div if:true={localField.isEmail} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-text 
+                value={localField.data.text}>
+            </lightning-formatted-text>
+        </div>
+        <div if:true={localField.isTextArea} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-rich-text 
+                value={localField.data.textArea}>
+            </lightning-formatted-rich-text>
+        </div>
+        <div if:true={localField.isNumber} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-number 
+                value={localField.data.num}
+                format-style="decimal">
+            </lightning-formatted-number>
+        </div>
+        <div if:true={localField.isCurrency} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-number 
+                value={localField.data.num}
+                format-style="currency">
+            </lightning-formatted-number>
+        </div>
+        <div if:true={localField.isPercent} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-number 
+                value={localField.data.num}
+                format-style="percent">
+            </lightning-formatted-number>
+        </div>
+        <div if:true={localField.isDate} class="slds-form-element__control slds-form-element__static">
+            <lightning-formatted-date-time 
+                value={localField.data.dte}>
+            </lightning-formatted-date-time>
+        </div>
+    </div>
+</template>

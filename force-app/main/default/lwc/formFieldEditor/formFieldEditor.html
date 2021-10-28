@@ -1,0 +1,91 @@
+<template>
+    <div if:true={localField.userVisible}>
+        <div if:true={localField.isText}>
+            <lightning-input 
+                id={localField.recordId}
+                dataid={localField.data.dataId}
+                data-id={localField.data.dataId}
+                type="text" 
+                value={localField.data.text}
+                required={localField.required}
+                placeholder="type text here..." 
+                onblur={handleTextInputchange}
+                onkeyup={checkValidity}
+                label={localField.name}>
+            </lightning-input>
+        </div>
+        <div if:true={localField.isEmail}>
+            <lightning-input 
+                id={localField.recordId}
+                data-id={localField.data.dataId}
+                type="email" 
+                value={localField.data.text}
+                required={localField.required}
+                placeholder="type text here..." 
+                onblur={handleTextInputchange}
+                onkeyup={checkValidity}
+                label={localField.name}>
+            </lightning-input>
+        </div>
+        <div if:true={localField.isTextArea}>
+            <lightning-textarea 
+                id={localField.recordId}
+                data-id={localField.data.dataId}
+                type="textarea"
+                value={localField.data.textArea}
+                required={localField.required}
+                placeholder="type text area here..." 
+                onblur={handleTextAreachange}
+                label={localField.name}>
+            </lightning-textarea>
+        </div>
+        <div if:true={localField.isNumber}>
+            <lightning-input 
+                id={localField.recordId}
+                data-id={localField.data.dataId}
+                type="number" 
+                value={localField.data.num}
+                required={localField.required}
+                onblur={handleNumberInputchange}
+                label={localField.name}>
+            </lightning-input>
+        </div>
+        <div if:true={localField.isCurrency}>
+            <lightning-input 
+                id={localField.recordId}
+                data-id={localField.data.dataId}
+                type="number" 
+                formatter="currency" 
+                step="0.01"
+                value={localField.data.num}
+                required={localField.required}
+                onblur={handleNumberInputchange}
+                label={localField.name}>
+            </lightning-input>
+        </div>
+        <div if:true={localField.isPercent}>
+            <lightning-input 
+                id={localField.recordId}
+                data-id={localField.data.dataId}
+                type="number" 
+                formatter="percent" 
+                step="0.01"
+                value={localField.data.num}
+                required={localField.required}
+                onblur={handleNumberInputchange}
+                label={localField.name}>
+            </lightning-input>
+        </div>
+        <div if:true={localField.isDate}>
+            <lightning-input 
+                id={localField.recordId}
+                dataid={localField.data.dataId}
+                type="date" 
+                value={localField.data.dte}
+                required={localField.required}
+                onblur={handleDateInputchange}
+                label={localField.name}>
+            </lightning-input>
+        </div>
+    </div>
+</template>
