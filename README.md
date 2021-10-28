@@ -1,6 +1,6 @@
 # About this Repo
 
-NHN is a sample app demonstrating patterns for building robust LWC applications in Salesforce.   The central use-case is a set of reusable context-aware LWCs to enable form submission and viewing for bothe Experience Site users and internal staff.  These LWCs consume the relvant data via Apex encapsulation classes which manage business logic, data access and structure.
+NHN is a sample app demonstrating patterns for building robust LWC applications in Salesforce.   The central use-case is a set of reusable context-aware LWCs to enable form submission and viewing for both Experience Site users and internal staff.  These LWCs consume the relvant data via Apex encapsulation classes which manage business logic, data access and structure.
 
 ## Safe Harbor
 
