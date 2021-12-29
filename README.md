@@ -8,5 +8,5 @@ Originally created for a Tahoe Dreamin' Demo, this sample application is a work 
 
 ## Resources
 
-Link to Taho Dreamin' Deck: https://drive.google.com/file/d/1nqDxaGm6z3W3bU_GblODKD3we77XM1ru/view?usp=sharing
+Link to Taho Dreamin' Deck: https://drive.google.com/file/d/1gFtFhN75DWPCQxF0n6__6UKQ2OYCceaq/view?usp=sharing
 
