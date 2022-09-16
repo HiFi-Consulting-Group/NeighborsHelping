@@ -2,11 +2,8 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent'
 
 // error handler
 function handleError(error) {
-    console.log('error');
-    console.dir(error);
     try {
         let errorObj = JSON.parse(error.body.message);
-        console.log('errorObj', errorObj);
         dispatchEvent(
             new ShowToastEvent({
                 title: errorObj.title,
@@ -25,8 +22,6 @@ function handleError(error) {
             })
         )
     }
-    
-
 }
 
 // error handler

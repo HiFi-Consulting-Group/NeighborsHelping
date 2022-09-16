@@ -14,9 +14,6 @@
 public with sharing class LWC_Exception extends Exception {
     
     public LWC_Exception ( String methodIdentifier, String message, Exception e, Integer exceptionCode ) {
-        System.debug('Original Exception: '+e);
-        System.debug('Stack Trace: '+e.getStackTraceString());
-        System.debug('message: '+message);
         LWC_ExceptionData data = new LWC_ExceptionData ();
         data.title = 'An Error Has Occurred';
         data.variant = 'error';
@@ -47,4 +44,5 @@ public with sharing class LWC_Exception extends Exception {
         AuraHandledException e = new AuraHandledException ( data.serialize () );
         throw e;
     }
+    
 }

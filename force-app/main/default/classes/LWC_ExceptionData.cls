@@ -22,3 +22,7 @@ public class LWC_ExceptionData {
         return JSON.serialize ( this );
     }
 }
+
+
+
+

@@ -1,7 +1,5 @@
 
-//This class is used to give visibility to records that cannot be shared with hub users via permissions.  Because it runs without sharing, methods here should be highly selective and targeted
-
-public without sharing class HubControllerWithoutSharing {
+public with sharing class HubController {
     
     public static Form createProjectRequest(ID runningUserContactId){
         Form frm = new Form();
